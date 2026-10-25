@@ -1,4 +1,4 @@
-import 'package:doctor/features/login/ui/widgets/login_screen.dart';
+import 'package:doctor/features/login/ui/login_screen.dart';
 import 'package:doctor/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor/core/routing/routes.dart';
