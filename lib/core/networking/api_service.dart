@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:doctor/features/login/logic/models/login_request_body.dart';
-import 'package:doctor/features/login/logic/models/login_response.dart';
+import 'package:doctor/features/login/data/models/login_request_body.dart';
+import 'package:doctor/features/login/data/models/login_response.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:doctor/core/networking/api_constants.dart';
 
