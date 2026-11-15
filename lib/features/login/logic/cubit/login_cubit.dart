@@ -1,4 +1,3 @@
-import 'package:doctor/core/networking/api_error_handler.dart';
 import 'package:doctor/core/networking/api_result.dart';
 import 'package:doctor/features/login/data/models/login_request_body.dart';
 import 'package:doctor/features/login/data/repos/login_repo.dart';
@@ -15,8 +14,11 @@ class LoginCubit extends Cubit<LoginState> {
     final response = await _loginRepo.login(loginRequestBody);
     response.when(
       success: (data) => emit(LoginState.success(data)),
-      failure: (errorHandler) =>
-          emit(LoginState.failure(error: errorHandler.errorMessage)),
+      failure: (errorHandler) => emit(
+        LoginState.failure(
+          error: errorHandler.apiErrorModel.message ?? '',
+        ),
+      ),
     );
   }
 }
