@@ -1,4 +1,7 @@
+import 'package:doctor/core/helpers/extentions.dart';
+import 'package:doctor/core/routing/routes.dart';
 import 'package:doctor/core/theming/styles.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class DontHaveAccountText extends StatelessWidget {
@@ -14,7 +17,12 @@ class DontHaveAccountText extends StatelessWidget {
             text: 'Don\'t have an account?',
             style: TextStyles.font13DarkBlueRegular,
           ),
-          TextSpan(text: ' Sign Up', style: TextStyles.font13BlueSemiBold),
+          TextSpan(
+            text: ' Sign Up',
+            style: TextStyles.font13BlueSemiBold,
+            recognizer: TapGestureRecognizer()
+              ..onTap = () => context.pushNamed(Routes.registerScreen),
+          ),
         ],
       ),
     );
