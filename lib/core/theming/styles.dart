@@ -93,4 +93,16 @@ class TextStyles {
     color: ColorManager.primaryColor,
     fontWeight: FontWeightHelper.semiBold,
   );
+
+  static TextStyle get font24BlueBold => TextStyle(
+    fontSize: 24.sp,
+    color: ColorManager.primaryColor,
+    fontWeight: FontWeightHelper.bold,
+  );
+
+  static TextStyle get font14GrayRegular => TextStyle(
+    fontSize: 14.sp,
+    color: ColorManager.gray,
+    fontWeight: FontWeightHelper.regular,
+  );
 }

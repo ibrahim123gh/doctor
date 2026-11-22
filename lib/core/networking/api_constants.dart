@@ -3,6 +3,7 @@ class ApiConstants {
   static const String apiBaseUrl = 'http://192.168.10.63:5000/api/';
 
   static const String loginUrl = 'auth/login';
+  static const String signupUrl = 'auth/register';
 }
 
 class ApiErrors {

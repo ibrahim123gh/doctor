@@ -3,7 +3,7 @@ import 'package:doctor/core/theming/styles.dart';
 import 'package:doctor/core/widgets/app_text_button.dart';
 import 'package:doctor/features/login/data/models/login_request_body.dart';
 import 'package:doctor/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor/features/login/ui/widgets/already_have_an_account.dart';
+import 'package:doctor/features/login/ui/widgets/dont_have_account_text.dart';
 import 'package:doctor/features/login/ui/widgets/email_and_password.dart';
 import 'package:doctor/features/login/ui/widgets/login_block_listener.dart';
 import 'package:doctor/features/login/ui/widgets/terms_and_condition_text.dart';
@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                     verticalSpace(16),
                     TermsAndConditionText(),
                     verticalSpace(60),
-                    AlreadyHaveAnAccount(),
+                    const DontHaveAccountText(),
                     const LoginBlockListener(),
                   ],
                 ),
@@ -67,14 +67,7 @@ class LoginScreen extends StatelessWidget {
 
   void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formkey.currentState!.validate()) {
-      // Perform login logic here
-      // You can access the email and password values from the controllers
-      final email = context.read<LoginCubit>().emailController.text;
-      final password = context.read<LoginCubit>().passwordController.text;
-
-      context.read<LoginCubit>().emitLoginStates(
-        LoginRequestBody(email: email, password: password),
-      );
+      context.read<LoginCubit>().emitLoginStates();
     }
   }
 }
