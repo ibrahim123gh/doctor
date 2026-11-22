@@ -13,7 +13,7 @@ part of 'api_service.dart';
 
 class _ApiService implements ApiService {
   _ApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://vcare.integration25.com/api';
+    baseUrl ??= 'http://localhost:5000/api/';
   }
 
   final Dio _dio;
