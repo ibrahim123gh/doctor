@@ -34,7 +34,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     response.when(
       success: (data) => emit(SignUpState.success(data)),
       failure: (errorHandler) => emit(
-        SignUpState.failure(error: errorHandler.apiErrorModel.message ?? ''),
+        SignUpState.failure(error: errorHandler.apiErrorModel.displayMessage),
       ),
     );
   }
